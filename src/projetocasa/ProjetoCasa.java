@@ -34,47 +34,49 @@ public class ProjetoCasa {
             }
 
             if (opcao == 1) {
-                if (objtv.status == 0) {
-                    System.out.println("A Televisão esta Desligada.");
-                } else {
-                    System.out.println("A televisão esta Ligada.");
-                }
-                if (objtv.status==1){
-                    System.out.println("O Canal " + objtv.canal);
-                    System.out.println("O Volume " + objtv.volume);
+                do {
+                    if (objtv.status == 0) {
+                        System.out.println("A Televisão esta Desligada.");
+                    } else {
+                        System.out.println("A televisão esta Ligada.");
+                    }
+                    if (objtv.status == 1) {
+                        System.out.println("O Canal " + objtv.canal);
+                        System.out.println("O Volume " + objtv.volume);
 
-                }
+                    }
 
-                System.out.println("1-Ligar/Desligar.");
-                if(objtv.status==1){
-                    System.out.println("2-Trocar Canal.");
-                    System.out.println("3-Almentar Volume.");
-                    System.out.println("4-Diminuir Volume.");
-                    System.out.println("5 Escolher outra tv");
-                }
-                opcao = teclado.nextInt();
-                switch (opcao) {
-                    case 1:
-                        objtv.ligar_desligar();
-                        break;
-                    case 2:
-                        int canal;
-                        System.out.println("Qual canao 1,3,5,7,11.");
-                        canal = teclado.nextInt();
-                        if (canal == 1 || canal == 3 || canal == 5 || canal == 7 || canal == 11) {
-                            objtv.trocar_canal(canal);
-                        }
-                        break;
-                    case 3:
-                        objtv.aumentar_volume();
-                        break;
-                    case 4:
-                        objtv.diminuir_volume();
-                    case 5:
-                        break;
-                    default:
-                        System.out.println("Opção invalida");
-                }
+                    System.out.println("1-Ligar/Desligar.");
+                    if (objtv.status == 1) {
+                        System.out.println("2-Trocar Canal.");
+                        System.out.println("3-Almentar Volume.");
+                        System.out.println("4-Diminuir Volume.");
+                        System.out.println("5 Escolher outra tv");
+                    }
+                    opcao = teclado.nextInt();
+                    switch (opcao) {
+                        case 1:
+                            objtv.ligar_desligar();
+                            break;
+                        case 2:
+                            int canal;
+                            System.out.println("Qual canao 1,3,5,7,11.");
+                            canal = teclado.nextInt();
+                            if (canal == 1 || canal == 3 || canal == 5 || canal == 7 || canal == 11) {
+                                objtv.trocar_canal(canal);
+                            }
+                            break;
+                        case 3:
+                            objtv.aumentar_volume();
+                            break;
+                        case 4:
+                            objtv.diminuir_volume();
+                        case 5:
+                            break;
+                        default:
+                            System.out.println("Opção invalida");
+                    }
+                }while (opcao!=5);
             /*if (opcao==1){
                 objtv.ligar_desligar();
             } else if (opcao==2) {

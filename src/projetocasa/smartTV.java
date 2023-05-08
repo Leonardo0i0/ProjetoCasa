@@ -22,7 +22,8 @@ public class smartTV extends TV{
            }
         }
     };
-     void ligar_desligar(){
+   @Override
+    void ligar_desligar(){
       super.ligar_desligar();
       if (status == 0){
             conectado=false;
